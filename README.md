@@ -6,12 +6,18 @@ A secure Spring Boot backend service for managing user onboarding, authenticatio
 
 ## Tech Stack
 
+### Backend
 - **Java**: 17
-- **Framework**: Spring Boot
-- **Security**: Spring Security & OAuth2 Client (Google & Facebook)
-- **Database**: MySQL with Spring Data JPA & Hibernate
-- **Email Service**: Spring Boot Starter Mail (SMTP)
+- **Framework**: Spring Boot 3 (Spring Security, Spring Data JPA, Spring Mail)
+- **Security**: OAuth2 Client (Google & Facebook), BCrypt password hashing
+- **Database**: MySQL / MariaDB with Hibernate
 - **Build Tool**: Apache Maven (`mvnw` wrapper included)
+
+### Frontend
+- **Framework**: React 19 + Vite 6
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Authentication Client**: Native Fetch API with session cookie management and Vite reverse proxy
 
 ---
 
@@ -89,6 +95,15 @@ export GMAIL_APP_PASSWORD="your_app_password"
 ./mvnw spring-boot:run
 ```
 The server will start on default port `8080`.
+
+### 5. Run the Frontend
+In a separate terminal, navigate to `frontend` and start the Vite dev server:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The client will be accessible at `http://localhost:5173`.
 
 ---
 
